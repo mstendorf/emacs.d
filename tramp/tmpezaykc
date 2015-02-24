@@ -1,0 +1,6 @@
+;; -*- emacs-lisp -*- <15/02/05 23:28:09 d:/Google Drive/emacs/.emacs.d/tramp>
+;; Tramp connection history.  Don't change this file.
+;; You can delete it, forcing Tramp to reapply the checks.
+
+((["plink" "root" "172.16.254.91" nil nil]
+  nil))

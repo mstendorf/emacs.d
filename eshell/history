@@ -1,0 +1,10 @@
+./httpget
+ls
+./httpget
+ls
+./httpget_1 
+httpget_1
+pwd
+cd ..
+grep spyself
+grep spyself *

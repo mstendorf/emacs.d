@@ -1,0 +1,13 @@
+;;; company-restclient-autoloads.el --- automatically extracted autoloads
+;;
+;;; Code:
+
+
+(provide 'company-restclient-autoloads)
+;; Local Variables:
+;; version-control: never
+;; no-byte-compile: t
+;; no-update-autoloads: t
+;; coding: utf-8
+;; End:
+;;; company-restclient-autoloads.el ends here
