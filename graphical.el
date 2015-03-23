@@ -23,6 +23,19 @@
 
       ;; Set default method for tramp on windows to be plink
       (setq tramp-default-method "plink")
+
+      ;prettyfy
+      (require 'color)
+      (let ((bg (face-attribute 'default :background)))
+	(custom-set-faces
+	 `(company-tooltip ((t (:inherit default :background ,(color-lighten-name bg 2)))))
+	 `(company-scrollbar-bg ((t (:background ,(color-lighten-name bg 10)))))
+	 `(company-scrollbar-fg ((t (:background ,(color-lighten-name bg 5)))))
+	 `(company-tooltip-selection ((t (:inherit font-lock-function-name-face))))
+	 `(company-tooltip-common ((t (:inherit font-lock-constant-face))))))
+      
+
+      
       ; start emacs in fullscreen (windows specific)
 ; this has to be last cause of some window error along the line in this config, figure out where
       (w32-send-sys-command 61488)

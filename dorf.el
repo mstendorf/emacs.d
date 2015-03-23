@@ -16,5 +16,3 @@
 (load "~/.emacs.d/programming.el")
 (load "~/.emacs.d/keybindings.el")
 (load "~/.emacs.d/misc.el")
-
-

@@ -32,8 +32,3 @@
 (load "~/.emacs.d/misc.el")
 #+end_src
 
-
-
-#+begin_src emacs-lisp
-
-#+end_src
