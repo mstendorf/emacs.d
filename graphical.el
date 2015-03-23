@@ -28,4 +28,5 @@
       (w32-send-sys-command 61488)
       )					;else
   (load-theme 'wombat t)
+  (xterm-mouse-mode 1)
   )

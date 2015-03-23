@@ -1,5 +1,4 @@
 ;; This is the main configuration for major modes
-
 ;; IDO
 
 ;ido mode is just to awesome to miss
@@ -31,5 +30,15 @@
 
 ;; TRAMP
 (require 'tramp)
-(add-to-list 'tramp-default-proxies-alist
-	     '((regexp-quote (system-name)) nil nil))
+(setq tramp-verbose 10)
+(setq tramp-debug-buffer t)
+(setq tramp-shell-prompt-pattern
+      "\\(?:^\\|
+\\)[^:#$%>\n]*[:#$%>] *\\(\\[[0-9;]*[a-zA-Z] *\\)*")
+
+
+;; FLEX - auto insert paired bracers and strins
+(require 'flex-autopair)
+(flex-autopair-mode 1)
+;; (add-to-list 'tramp-default-proxies-alist
+;; 	     '((regexp-quote (system-name)) nil nil))
