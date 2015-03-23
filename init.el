@@ -13,15 +13,6 @@
     (package-initialize)
      (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
       )
-(load "~/.emacs.d/functions.el")
-(load "~/.emacs.d/settings.el")
-(load "~/.emacs.d/graphical.el")
-(load "~/.emacs.d/personal.el")
-(load "~/.emacs.d/modules.el")
-(load "~/.emacs.d/programming.el")
-(load "~/.emacs.d/keybindings.el")
-(load "~/.emacs.d/misc.el")
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

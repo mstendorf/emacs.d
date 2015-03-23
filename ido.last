@@ -1,0 +1,28 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/root/" . ".emacs.d/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/root/.emacs.d/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "init.el"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/root/.emacs.d/" (21775 63488 0 0) "settings.el" "programming.el" "personal.el" "LICENSE" "README.md" "modules.el" "misc.el" "keybindings.el" "init.el" "graphical.el" "functions.el" "dorf.el" ".gitignore" "tramp/" "eshell/" "org-mode/" "org2blog/" ".git/" "auto-save-list/" "dorf.org" "elpa/" "../" "./")
+
+ ("/root/" (21775 61768 0 0) ".gitignore" "%backup%~" "*message*-20141213-135805" "*message*-20141210-120118" ".ido.last~" ".ido.last" ".screenrc" ".login~" ".git/" ".gitconfig" ".psql_history" ".subversion/" ".history" ".emacs.d/" ".ssh/" ".login" ".k5login" ".profile" ".cshrc" "../" "./")
+
+ ("/home/mas/.emacs.d/" (21775 64078 0 0) "tramp/" "settings.el" "programming.el" "personal.el" "org2blog/" "org-mode/" "modules.el" "misc.el" "keybindings.el" "init.el" "graphical.el" "functions.el" "eshell/" "elpa/" "dorf.org" "dorf.el" "auto-save-list/" "README.md" "LICENSE" ".gitignore" ".git/" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
