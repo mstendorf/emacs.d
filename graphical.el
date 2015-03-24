@@ -13,6 +13,9 @@
       (menu-bar-mode -1)
 ;always start emacs in split pane mode
       (split-window-horizontally)
+      ;highlight the current marked line
+      (global-hl-line-mode 1)
+      (set-face-background 'hl-line "midnight blue")
 ;load the theme!
       (load-theme 'deeper-blue t)
 
@@ -33,13 +36,13 @@
 	 `(company-scrollbar-fg ((t (:background ,(color-lighten-name bg 5)))))
 	 `(company-tooltip-selection ((t (:inherit font-lock-function-name-face))))
 	 `(company-tooltip-common ((t (:inherit font-lock-constant-face))))))
-      
 
-      
+
+
       ; start emacs in fullscreen (windows specific)
 ; this has to be last cause of some window error along the line in this config, figure out where
       (w32-send-sys-command 61488)
       )					;else
   (load-theme 'wombat t)
-  (xterm-mouse-mode 1)
+  ;(xterm-mouse-mode 1)
   )

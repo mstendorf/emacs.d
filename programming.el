@@ -16,8 +16,8 @@
 (c-set-offset 'inline-open 0)
 
 ;; activate minor whitespace mode - FIGURE OUT WTF THIS IS!!!
-(add-hook 'c-mode-common-hook 'whitespace-mode)
-(add-hook 'rst-mode-hook 'whitespace-mode)
+;(add-hook 'c-mode-common-hook 'whitespace-mode)
+;(add-hook 'rst-mode-hook 'whitespace-mode)
 
 
 

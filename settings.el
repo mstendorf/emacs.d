@@ -7,9 +7,6 @@
 (setq undo-limit 20000000)
 (setq undo-sring-limit 40000000)
 
-;highlight the current marked line
-(global-hl-line-mode 1)
-(set-face-background 'hl-line "midnight blue")
 
 ;setup the preference of UTF-8
 ;(setq locale-coding-system 'utf-8)
@@ -33,8 +30,8 @@ scroll-step 1)
 (add-hook 'write-file-hooks 'delete-trailing-whitespace)
 ;; display only tails of lines longer than 80 columns, tabs and
 ;; trailing whitespaces
-(setq whitespace-line-column 80
-           whitespace-style '(face tabs trailing lines-tail))
+;(setq whitespace-line-column 80
+;           whitespace-style '(face tabs trailing lines-tail))
 
 ;; Allow Emacs to silently delete backup files
 (setq delete-old-versions t)

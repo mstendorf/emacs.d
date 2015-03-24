@@ -2,34 +2,66 @@
 
 ;; ----- ido-last-directory-list -----
 (
+ ("/" . "root/")
+ ("/usr/home/mas/bassunix/trunk/libspy/" . "src/")
+ ("/usr/home/mas/bassunix/trunk/" . "libspy/")
  ("/home/mas/" . ".emacs.d/")
  ("/root/" . ".emacs.d/")
 )
 
 ;; ----- ido-work-directory-list -----
 (
- "/home/mas/.emacs.d/"
+ "/home/mas/"
  "/root/.emacs.d/"
+ "/usr/home/mas/bassunix/trunk/libspy/src/"
+ "/home/mas/.emacs.d/"
 )
 
 ;; ----- ido-work-file-list -----
 (
- "keybindings.el"
+ "radiusCoa.cpp"
+ "modules.el"
  "graphical.el"
- "init.el"
  "settings.el"
+ "spy_vlan.cpp"
+ "keybindings.el"
+ "init.el"
  "README.md"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/root/.emacs.d/" (21776 5798 0 0) "ido.last~" "ido.last" "settings.el" "programming.el" "personal.el" "LICENSE" "README.md" "modules.el" "misc.el" "keybindings.el" "init.el" "graphical.el" "functions.el" "dorf.el" ".gitignore" "tramp/" "eshell/" "org-mode/" "org2blog/" ".git/" "auto-save-list/" "dorf.org" "elpa/" "../" "./")
+ ("/root/.emacs.d/" (21777 20641 0 0) "ido.last~" "ido.last" "settings.el" "programming.el" "personal.el" "LICENSE" "README.md" "modules.el" "misc.el" "keybindings.el" "init.el" "graphical.el" "functions.el" "dorf.el" ".gitignore" "tramp/" "eshell/" "org-mode/" "org2blog/" ".git/" "auto-save-list/" "dorf.org" "elpa/" "../" "./")
+
+ ("/home/mas/org/" (21776 4154 0 0) "introduction.org~" "priv.org~" "plan.org~" "priv.org" "plan.org" "introduction.org" "../" "./")
+
+ ("/usr/home/mas/bassunix/trunk/libspy/src/" (21712 60856 0 0) "spy_cable_modem_cpe.cpp" "spy_cable_modem_cpe.lo" "spy_cable_modem_cpe.o" "spy_snmp.lo" "libspy.la" "spylualib.lo" "spy_snmp.o" "spy_fdb_ip.lo" "spy_vlan.cpp" "spy_device.cpp" "inifile.lo" "spy_fdb_ip.cpp" "spy.cpp" "spy_snmp.cpp" "spylualib.o" "inifile.o" "spy_vlan.lo" "spylualib.cpp" "init.lo" "spy_fdb_ip.o" "utility.cpp" "spy_vlan.o" "spy_interface.lo" "spy_interface.cpp" "spy.lo" "init.o" "spy_device.lo" "spytest" "Makefile.am" "spy_interface.o" "spy_device.o" "utility.lo" "spy.o" "inifile.c" "utility.o" ".libs/" "spytest.cpp" ".deps/" "Makefile" "Makefile.in" "init.c" "CVS/" "../" "./")
+
+ ("/usr/home/mas/bassunix/trunk/libspy/" (21712 60856 0 0) "Makefile" "#configure.ac#" "config.status" "depcomp" "COPYING" "INSTALL" "missing" "install-sh" "config.sub" "config.guess" "compile" "autom4te.cache/" "m4/" "config.log" "Makefile.am" "acinclude.m4" "libtool" "configure.ac" "README" "CVS/" "Makefile.in" "ChangeLog" "AUTHORS" "src/" "configure" "stamp-h.in" "aclocal.m4" "ltmain.sh" "NEWS" "include/" "etc/" "../" "./")
+
+ ("/usr/home/mas/bassunix/trunk/" (21714 4293 0 0) "ltmain.sh" "libcronlua/" "cronengine/" "dbbackend/" "wakeup/" "libwaoo/" "svn-commit.tmp" "genpassword/" "basslang/" "regning/" "php/" "xmlrpcservice/" "snmpbackend/" "libnavi/" "Makefile" "test.ofile" "libquickpay/" "libraplua/" "temp/" "docmanager/" "libserver/" "provoengine/" "dbexport/" "Doxyfile" "runconf.sh" "jsonrpcbackend/" "libbasslua/" "m4/" "dhcpsnmp/" "rapengine/" "ports/" "libutil/" "libtdclua/" "libom/" "make.conf" "cdrbuffer/" "libtdc/" "libxos/" "libengine/" "waooengine/" "soapC.cpp" "soapStub.h" "scripts/" "trackmac/" "libtxos/" "libtdcmhsi/" "test/" "libkk1/" "libvcm/" "libbilllua/" "queueserver/" "billengine/" "libnoc/" "ichcrm/" "libspy/" "soapH.h" "tdcengine/" "prefix/" "libnomad/" "xmlservice/" "lua/" "libbass/" "bassengine/" "sqlsnoop/" "libcpr/" "libtr069/" "xosfdbtrack/" "libticket/" "libbilling/" "cdrhandler/" "libcdr/" "../" "./")
+
+ ("/usr/home/mas/bassunix/trunk/xmlrpcservice/" (21712 61533 0 0) "libtool" "#RE#" "Makefile" "config.status" "autom4te.cache/" "src/" "ChangeLog" "access.log" "AUTHORS" "include/" "configure" "stdsoap2.cpp" "m4/" "install-sh" "config.log" "depcomp" "Makefile.in" "aclocal.m4" "NEWS" ".deps/" "COPYING" "INSTALL" "Makefile.am" "acinclude.m4" "missing" "configure.ac" "compile" "config.sub" "ltmain.sh" "config.guess" "1" "README" "../" "./")
+
+ ("/usr/home/mas/bassunix/trunk/xmlrpcservice/src/" (21721 60739 0 0) "xmlrpcbackend" ".libs/" "cpr_inifile.o" "cpr_inifile.c" "datatypes.o" "menu.o" "cpr.o" "cpr.nsmap" "cpr.cpp" "cprC.o" "json.o" "acl.o" "pool.o" "xml-rpc.o" "xml.o" "http.o" "http_methods.o" "soapClient.o" "soapServer.o" "library.o" "logging.o" "httpget.o" "iniparser.o" "soapC.o" "bass_acl.o" "session_api_init.o" "session_api.o" "utility.o" "bassrpc.o" "xml_inifile.o" "stdsoap2.o" "#soapC.cpp#" "httppost.o" "cprC.cpp" "ns1.nsmap" "cprH.h" "cprStub.h" "soapC.cpp" "ns.dummy.req.xml" "soapService.cpp" "soapService.h" "uuid.cpp" "bass_options.cpp" "httpform.cpp" "xml.cpp" "stdsoap2.cpp" "bassrpc.cpp" "envC.cpp" "test/" "xml-rpc-json.cpp" "soapProxy.cpp" "service_api.cpp" "ns.xsd" "bass_get.cpp" "logging.cpp" "httppost.cpp" "testrpc.cpp" "bass_http_util.cpp" "soapServer.cpp" "soapClient.cpp" "test.cpp" "httpget.cpp" "session_api.cpp" "json.cpp" "pool.cpp" "bass_acl.cpp" "soapProxy.h" "library.cpp" "menu.cpp" "utility.cpp" "http_methods.cpp" "ns.wsdl" "ns.nsmap" "xml_inifile.cpp" "session_api_init.cpp" "acl.cpp" "datatypes.cpp" "http/" "test.xml" "r.nsmap" "iniparser.c" "soapStub.h" "bassget.cpp" "api/" "Makefile.am" "xml-rpc-io.cpp" "httpmd5.cpp" "soapH.h" "httpda.cpp" ".deps/" "Makefile" "xml-rpc.cpp" "http.cpp" "Makefile.in" "bass_form.cpp" "../" "./")
+
+ ("/usr/home/mas/bassunix/trunk/xmlrpcservice/src/api/" (21721 60512 0 0) "apicustomer_init.lo" "apidevicecpe_init.lo" "libxmlapidevicecpe.la" "apidevicecpe.lo" "apidevicecpe_init.o" "apidocumentation_init.lo" "apidevicecpe.o" "apidocumentation.lo" "Makefile" "Makefile.in" "libxmlapidocumentation.la" "apidocumentation_init.o" "apiserver_init.lo" "apidocumentation.o" "libxmlapiserver.la" "apiserver_init.o" "apiserver.lo" "apiticket_init.lo" "apiserver.o" "libxmlapiticket.la" "apiticket_init.o" "apiticket.lo" "apireport_init.lo" "apiticket.o" "libxmlapireport.la" "apireport.o" "apidevice_init.o" "apireport_init.o" "apireport.lo" "apidevice_init.lo" "libxmlapidevice.la" "apidevice.lo" "apiorganisation_init.lo" "apidevice.o" "libxmlapiorganisation.la" "apiorganisation_init.o" "apiorganisation.lo" "apiorganisation.o" "apinms_init.lo" "libxmlapinms.la" "apinms_init.o" "apinms.lo" "apibilling_init.lo" "apinms.o" "libxmlapibilling.la" "apibilling.lo" "apibilling_init.o" "apiphone_init.lo" "apibilling.o" "libxmlapiphone.la" "apiphone.lo" "apiphone_init.o" "apiorder_init.lo" "apiphone.o" "libxmlapiorder.la" "apiorder.lo" "apiorder_init.o" "apiresource_init.lo" "apiorder.o" "libxmlapiresource.la" "apiresource_init.o" "apiresource.lo" "apievent_init.lo" "libxmlapievent.la" "apievent.o" "apiapartment_init.o" "apiproduct_init.o" "apidocument_init.lo" "apiproduct.lo" "libxmlapidocument.la" "ns.nsmap" "apinms_init.cpp" "apiapartment_init.cpp" "navision/" "apidocument.lo" "apiproduct.cpp.kop" "apievent_init.cpp" "apibilling_init.cpp" "apicustomer.cpp" "apiservice.cpp" "apiservice_init.o" "apiapartment.cpp" "libxmlapiservice.la" "#apicustomer_init.cpp#" "apiservice.o" "apiresource.o" "apievent.lo" "apievent_init.o" "apiapartment_init.lo" "libxmlapiapartment.la" "merak/" "apiapartment.lo" "apiresource_init.cpp" "apiproduct_init.lo" "apiphone.cpp" "apiapartment.o" "apiticket_init.cpp" "libxmlapiproduct.la" "apiproduct_init.cpp" "ns.xsd" "apitemplate_init.cpp" "Makefile.am" "apiorder_init.cpp" "apiorganisation.cpp" "apiproduct.o" "apidocument_init.o" "apiservice_init.lo" "freeswitch/" "apiresource.cpp" "apicustomer_init.cpp" "apiticket.cpp" "apibilling.cpp" "radius/" "apidocument.o" "apiservice.lo" "libxmlapicustomer.la" "apitemplate.cpp" "apiorder.cpp" "apidocumentation.cpp" "apicustomer.o" "api.cp" "apireport_init.cpp" "apiphone_init.cpp" "apiservice_init.cpp" "apidevice_init.cpp" "apicustomer_init.o" "apicustomer.lo" "apinms.cpp" "apievent.cpp" "apiorganisation_init.cpp" "apiproduct.cpp" "apidocument.cpp" "bassclient/" "apireport.cpp" "apidevicecpe_init.cpp" ".deps/" "apiserver.cpp" ".libs/" "apidocument_init.cpp" "apidevice.cpp" "apidocumentation_init.cpp" "apiserver_init.cpp" "apidevicecpe.cpp" "#apiproduct.cpp#" "../" "./")
+
+ ("/usr/home/mas/bassunix/trunk/xmlrpcservice/src/api/radius/" (21721 60356 0 0) "globals.lo" "mapbuilder.lo" "apiradius.lo" "libxmlapiradius.la" "mapbuilder.o" "internet_inifile.lo" "pool.lo" "globals.o" "engine.lo" "event_functions.lo" "internet_inifile.o" "apiradius_init.lo" "pool.o" "event_functions.o" "apiradius_init.o" "engine.o" "apiradius.o" ".libs/" ".deps/" "Makefile" "Makefile.in" "pool.cpp" "event_functions.cpp" "Makefile.am" "internet_inifile.cpp" "engine.cpp" "mapbuilder.cpp" "library.cpp" "apiradius_init.cpp" "globals.cpp" "apiradius.cpp" "../" "./")
+
+ ("/home/" (21495 8323 0 0) "chl/" "mas/" "../" "./")
+
+ ("/home/mas/" (21776 5955 0 0) "pgsql.php" "billing_comp.php" "switchupdate.php" ".screenrc" "http-get.cpp" ".ssh/" "sbm_update.sql" ".login_conf~" "spycust.php" "key" "packet.txt" "dirlist.txt" "a.out" "FreeBSD9.3_install_script" "bassunix2/" ".gitignore~" "0.lua" "readius.html" "gdrive/" "xmlrpcbackend.core" "radiusTest" "org/" ".saves/" "access.log" "radiusCoa.cpp" "mysqlcpptest" "mysql_app" "deviceVman.php" ".grive" "testcode/" "httpget" ".emacs.d/" ".gitignore" "bassunix/" "code/" ".login_conf" ".cshrc" ".mailrc" ".profile" ".mail_aliases" ".shrc" ".login" ".rhosts" "../" "./")
+
+ ("/home/mas/code/" (21757 34118 0 0) "al2netConversion.php" "make.conf" "xmlrpcbackend.core" "access.log" "radiusCoa.cpp" "radiusTest" "tester.cpp" "bassapi/" "sql/" "bassunix/" "../" "./")
+
+ ("/home/mas/code/bassunix/" (21769 26806 0 0) "doctools/" "bassengine.log" "xosfdbtrack/" "xmlservice/" "xmlrpcservice/" "waooengine/" "wakeup/" "trackmac/" "test/" "tdcengine/" "sqlsnoop/" "snmpbackend/" "scripts/" "runconf.sh" "rapengine/" "queueserver/" "provoengine/" "prefix/" "php/" "make.conf" "m4/" "ltmain.sh" "libxos/" "libwaoo/" "libvcm/" "libutil/" "libtxos/" "libtr069/" "libticket/" "libtdcmhsi/" "libtdclua/" "libtdc/" "libspy/" "libserver/" "libraplua/" "libquickpay/" "libom/" "lua/" "libnomad/" "libnoc/" "libnavi/" "libkk1/" "libengine/" "libcronlua/" "libcpr/" "libcdr/" "libbilllua/" "libbilling/" "libbasslua/" "libbass/" "jsonrpcbackend/" "genpassword/" "docmanager/" "dhcpsnmp/" "dbexport/" "dbbackend/" "cronengine/" "cdrhandler/" "cdrbuffer/" "basslang/" "bassengine/" "Makefile" ".git/" "../" "./")
+
+ ("/home/mas/code/bassunix/xmlrpcservice/" (21757 32462 0 0) "config.log" "stdsoap2.cpp" "depcomp" "src/" "m4/" "Makefile.in" "libtool" "install-sh" "include/" "missing" "configure.ac" "configure" "config.sub" "config.status" "config.guess" "compile" "autom4te.cache/" "aclocal.m4" "acinclude.m4" "access.log" "README" "NEWS" "ltmain.sh" "Makefile.am" "Makefile" "INSTALL" "ChangeLog" "COPYING" "AUTHORS" "../" "./")
+
+ ("/home/mas/code/bassunix/xmlrpcservice/src/" (21776 6588 0 0) "#session_api.cpp#" ".#session_api.cpp" "xml_inifile.cpp" "xml.cpp" "xml-rpc.cpp" "xml-rpc-json.cpp" "xml-rpc-io.cpp" "uuid.cpp" "utility.cpp" "testrpc.cpp" "test/" "test.xml" "test.cpp" "stdsoap2.cpp" "soapStub.h" "soapService.h" "soapService.cpp" "soapServer.cpp" "soapProxy.cpp" "soapProxy.h" "soapH.h" "soapClient.cpp" "soapC.cpp" "session_api_init.cpp" "session_api.cpp" "service_api.cpp" "r.nsmap" "pool.cpp" "ns1.nsmap" "ns.xsd" "ns.wsdl" "ns.nsmap" "ns.dummy.req.xml" "menu.cpp" "logging.cpp" "library.cpp" "json.cpp" "iniparser.c" "httppost.cpp" "httpmd5.cpp" "httpget.cpp" "httpform.cpp" "http_methods.cpp" "httpda.cpp" "http/" "http.cpp" "envC.cpp" "datatypes.cpp" "cpr_inifile.c" "cprStub.h" "cprH.h" "cprC.cpp" "cpr.nsmap" "cpr.cpp" "bassrpc.cpp" "bassget.cpp" "bass_options.cpp" "bass_http_util.cpp" "bass_get.cpp" "bass_form.cpp" "bass_acl.cpp" "api/" "acl.cpp" "Makefile.in" "Makefile.am" "Makefile" ".deps/" "../" "./")
 
  ("/home/mas/.emacs.d/" (21776 5890 0 0) "ido.last" "tramp/" "settings.el" "programming.el" "personal.el" "org2blog/" "org-mode/" "modules.el" "misc.el" "keybindings.el" "init.el" "graphical.el" "functions.el" "eshell/" "elpa/" "dorf.org" "dorf.el" "auto-save-list/" "README.md" "LICENSE" ".gitignore" ".git/" "../" "./")
-
- ("/home/mas/" (21775 64061 0 0) "pgsql.php" "billing_comp.php" "switchupdate.php" ".screenrc" "http-get.cpp" ".ssh/" "sbm_update.sql" ".login_conf~" "spycust.php" "packet.txt" "dirlist.txt" "a.out" "FreeBSD9.3_install_script" "bassunix2/" ".gitignore~" "0.lua" "readius.html" "gdrive/" "xmlrpcbackend.core" "radiusTest" "org/" ".saves/" "access.log" "radiusCoa.cpp" "mysqlcpptest" "mysql_app" "deviceVman.php" ".grive" "testcode/" "httpget" ".emacs.d/" ".gitignore" "bassunix/" "code/" ".login_conf" ".cshrc" ".mailrc" ".profile" ".mail_aliases" ".shrc" ".login" ".rhosts" "../" "./")
-
- ("/home/mas/org/" (21775 64547 0 0) "introduction.org~" "#plan.org#" "priv.org~" "plan.org~" "priv.org" ".#plan.org" "plan.org" "introduction.org" "../" "./")
 
  ("/root/" (21775 61768 0 0) ".gitignore" "%backup%~" "*message*-20141213-135805" "*message*-20141210-120118" ".ido.last~" ".ido.last" ".screenrc" ".login~" ".git/" ".gitconfig" ".psql_history" ".subversion/" ".history" ".emacs.d/" ".ssh/" ".login" ".k5login" ".profile" ".cshrc" "../" "./")
 )
