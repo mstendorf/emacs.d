@@ -32,9 +32,9 @@
 (require 'tramp)
 (setq tramp-verbose 10)
 (setq tramp-debug-buffer t)
-(setq tramp-shell-prompt-pattern
-      "\\(?:^\\|
-\\)[^:#$%>\n]*[:#$%>] *\\(\\[[0-9;]*[a-zA-Z] *\\)*")
+;; (setq tramp-shell-prompt-pattern
+;;       "\\(?:^\\|
+;; \\)[^:#$%>\n]*[:#$%>] *\\(\\[[0-9;]*[a-zA-Z] *\\)*")
 
 
 ;; FLEX - auto insert paired bracers and strins

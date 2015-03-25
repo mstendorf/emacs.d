@@ -14,20 +14,20 @@
 
 ;; ----- ido-work-directory-list -----
 (
+ "/root/.emacs.d/"
  "/usr/home/mas/code/bassunix/docmanager/src/"
  "/usr/home/mas/org/"
  "/home/mas/"
- "/root/.emacs.d/"
  "/usr/home/mas/bassunix/trunk/libspy/src/"
  "/home/mas/.emacs.d/"
 )
 
 ;; ----- ido-work-file-list -----
 (
+ "modules.el"
  "docmanager.cpp"
  "plan.org"
  "radiusCoa.cpp"
- "modules.el"
  "graphical.el"
  "settings.el"
  "spy_vlan.cpp"
@@ -38,6 +38,16 @@
 
 ;; ----- ido-dir-file-cache -----
 (
+ ("/ssh:mas@10.2.2.204:/home/mas/" (ftp . 396468.5208333333) "./" "../" ".cshrc" ".login" ".login_conf" ".mailrc" ".profile" ".shrc" ".mail_aliases" ".rhosts" ".psql_history" "bassunix/" "code/" "docs/" "deviceVman.php" "pakkeskift.csv" "bindingsperiodedump.csv" "access.log" "xmlrpcbackend.core" "select.txt" "docmanager.core" "radiusCoa.cpp" "radiusTest" "schema.sql" "#packet.txt#" "#radiusCoa.cpp#" "al2netConversion.sql" "bassengine.core" "setup.sql" "al2netConversion.php" "sbm_update.sql" "masdump" ".emacs.d/" "dbBackup2015-06-01.sql" "tester.cpp" "minesider.pdf" "#masdump#" "tilMD/" "ps-stat.txt" "parseCSV.php" "billing_comp.php" "stdsoap2.cpp" "bassunix2/" "billing/" ".emacs" ".emacs~")
+
+ ("/ssh:mas@10.2.2.204:/home/" (ftp . 396468.5202777778) "./" "../" "molbech/" "backup/" "replication/" "bkp/" "sbm/" "mas/" "bass/" "lukninger.csv" "chl/" "adresserIbass2015-02-24.csv")
+
+ ("/ssh:mas@10.2.2.204:/" (ftp . 396468.51972222223) "./" "../" ".snap/" "dev/" "bin/" "boot/" "etc/" "lib/" "libexec/" "media/" "mnt/" "proc/" "rescue/" "root/" "sbin/" "tmp/" "usr/" "var/" "sys/" ".profile" ".cshrc" "COPYRIGHT" "home/" "vhosts/" "entropy" "waoo.log" "TEST.log" "SENT.log" "RECV.log" "x" "basslua_util.cpp" ".sujournal" "test" "rapengine.log" "rapengine.core")
+
+ ("/ssh:mas@172.16.254.91:/" (ftp . 396468.5111111111) "./" "../" ".snap/" "dev/" "libexec/" "var/" "COPYRIGHT" "sys" "mnt/" "sbin/" "tmp/" "lib/" "boot/" ".cshrc" "etc/" "proc/" "rescue/" "root/" "bin/" "usr/" ".profile" "media/" "home/" "entropy" "extjs" "cdrom/" ".emacs" "vhosts/" ".sujournal")
+
+ ("/root/.emacs.d/" (21778 43600 0 0) "ido.last~" "ido.last" "settings.el" "programming.el" "personal.el" "LICENSE" "README.md" "modules.el" "misc.el" "keybindings.el" "init.el" "graphical.el" "functions.el" "dorf.el" ".gitignore" "tramp/" "eshell/" "org-mode/" "org2blog/" ".git/" "auto-save-list/" "dorf.org" "elpa/" "../" "./")
+
  ("/usr/home/mas/code/bassunix/docmanager/src/" (21778 33252 0 0) "#docmanager.cpp#" "utility.cpp" "test.sh" "pdflib.cpp" "main.cpp" "mail.cpp" "libpdf64.a" "iniparser.c" "inifile.cpp" "docscan.cpp" "docscan" "docmanager.cpp" "docmanager" "docimporter.cpp" "docimporter" "docimport.cpp" "block_parser.cpp" "barcode.cpp" "Makefile.in" "Makefile.am" "Makefile" "../" "./")
 
  ("/usr/home/mas/code/bassunix/docmanager/" (21777 16302 0 0) "docmanager.core" "src/" "missing" "ltmain.sh" "install-sh" "include/" "depcomp" "data/" "configure.ac" "configure" "config.sub" "config.status" "config.log" "config.guess" "compile" "autom4te.cache/" "aclocal.m4" "README" "NEWS" "Makefile.in" "Makefile.am" "Makefile" "INSTALL" "ChangeLog" "COPYING" "AUTHORS" "../" "./")
@@ -49,8 +59,6 @@
  ("/usr/home/mas/org/" (21776 4154 0 0) "introduction.org~" "priv.org~" "plan.org~" "priv.org" "plan.org" "introduction.org" "../" "./")
 
  ("/usr/home/mas/" (21777 25981 0 0) "pgsql.php" "billing_comp.php" "switchupdate.php" ".screenrc" "http-get.cpp" ".ssh/" "sbm_update.sql" ".login_conf~" "spycust.php" "#radiusCoa.cpp#" "key" "packet.txt" "dirlist.txt" "a.out" "FreeBSD9.3_install_script" "bassunix2/" ".gitignore~" "0.lua" "readius.html" "gdrive/" "xmlrpcbackend.core" "radiusTest" "org/" ".saves/" "access.log" "radiusCoa.cpp" "mysqlcpptest" "mysql_app" "deviceVman.php" ".grive" "testcode/" "httpget" ".emacs.d/" ".gitignore" "bassunix/" "code/" ".login_conf" ".cshrc" ".mailrc" ".profile" ".mail_aliases" ".shrc" ".login" ".rhosts" "../" "./")
-
- ("/root/.emacs.d/" (21777 20641 0 0) "ido.last~" "ido.last" "settings.el" "programming.el" "personal.el" "LICENSE" "README.md" "modules.el" "misc.el" "keybindings.el" "init.el" "graphical.el" "functions.el" "dorf.el" ".gitignore" "tramp/" "eshell/" "org-mode/" "org2blog/" ".git/" "auto-save-list/" "dorf.org" "elpa/" "../" "./")
 
  ("/home/mas/org/" (21776 4154 0 0) "introduction.org~" "priv.org~" "plan.org~" "priv.org" "plan.org" "introduction.org" "../" "./")
 
