@@ -38,6 +38,8 @@
 
 ;; ----- ido-dir-file-cache -----
 (
+ ("/root/.emacs.d/" (21778 45040 0 0) "ido.last~" "ido.last" "settings.el" "programming.el" "personal.el" "LICENSE" "README.md" "modules.el" "misc.el" "keybindings.el" "init.el" "graphical.el" "functions.el" "dorf.el" ".gitignore" "tramp/" "eshell/" "org-mode/" "org2blog/" ".git/" "auto-save-list/" "dorf.org" "elpa/" "../" "./")
+
  ("/ssh:mas@10.2.2.204:/home/mas/" (ftp . 396468.5208333333) "./" "../" ".cshrc" ".login" ".login_conf" ".mailrc" ".profile" ".shrc" ".mail_aliases" ".rhosts" ".psql_history" "bassunix/" "code/" "docs/" "deviceVman.php" "pakkeskift.csv" "bindingsperiodedump.csv" "access.log" "xmlrpcbackend.core" "select.txt" "docmanager.core" "radiusCoa.cpp" "radiusTest" "schema.sql" "#packet.txt#" "#radiusCoa.cpp#" "al2netConversion.sql" "bassengine.core" "setup.sql" "al2netConversion.php" "sbm_update.sql" "masdump" ".emacs.d/" "dbBackup2015-06-01.sql" "tester.cpp" "minesider.pdf" "#masdump#" "tilMD/" "ps-stat.txt" "parseCSV.php" "billing_comp.php" "stdsoap2.cpp" "bassunix2/" "billing/" ".emacs" ".emacs~")
 
  ("/ssh:mas@10.2.2.204:/home/" (ftp . 396468.5202777778) "./" "../" "molbech/" "backup/" "replication/" "bkp/" "sbm/" "mas/" "bass/" "lukninger.csv" "chl/" "adresserIbass2015-02-24.csv")
@@ -45,8 +47,6 @@
  ("/ssh:mas@10.2.2.204:/" (ftp . 396468.51972222223) "./" "../" ".snap/" "dev/" "bin/" "boot/" "etc/" "lib/" "libexec/" "media/" "mnt/" "proc/" "rescue/" "root/" "sbin/" "tmp/" "usr/" "var/" "sys/" ".profile" ".cshrc" "COPYRIGHT" "home/" "vhosts/" "entropy" "waoo.log" "TEST.log" "SENT.log" "RECV.log" "x" "basslua_util.cpp" ".sujournal" "test" "rapengine.log" "rapengine.core")
 
  ("/ssh:mas@172.16.254.91:/" (ftp . 396468.5111111111) "./" "../" ".snap/" "dev/" "libexec/" "var/" "COPYRIGHT" "sys" "mnt/" "sbin/" "tmp/" "lib/" "boot/" ".cshrc" "etc/" "proc/" "rescue/" "root/" "bin/" "usr/" ".profile" "media/" "home/" "entropy" "extjs" "cdrom/" ".emacs" "vhosts/" ".sujournal")
-
- ("/root/.emacs.d/" (21778 43600 0 0) "ido.last~" "ido.last" "settings.el" "programming.el" "personal.el" "LICENSE" "README.md" "modules.el" "misc.el" "keybindings.el" "init.el" "graphical.el" "functions.el" "dorf.el" ".gitignore" "tramp/" "eshell/" "org-mode/" "org2blog/" ".git/" "auto-save-list/" "dorf.org" "elpa/" "../" "./")
 
  ("/usr/home/mas/code/bassunix/docmanager/src/" (21778 33252 0 0) "#docmanager.cpp#" "utility.cpp" "test.sh" "pdflib.cpp" "main.cpp" "mail.cpp" "libpdf64.a" "iniparser.c" "inifile.cpp" "docscan.cpp" "docscan" "docmanager.cpp" "docmanager" "docimporter.cpp" "docimporter" "docimport.cpp" "block_parser.cpp" "barcode.cpp" "Makefile.in" "Makefile.am" "Makefile" "../" "./")
 

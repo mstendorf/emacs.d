@@ -1,6 +1,6 @@
 ;; This is the main configuration for major modes
-;; IDO
 
+;; IDO
 ;ido mode is just to awesome to miss
 (require 'ido)
 ;flex matching in ido mode is living the dream while opening buffers and files
@@ -9,6 +9,7 @@
 ;i love fuzzy matching to much to do the helm switch, so doing this for now.
 (require 'ido-vertical-mode)
 (ido-mode 1)
+(setq ido-vertical-define-keys 'C-n-C-p-up-down-left-right)
 (ido-vertical-mode 1)
 
 ;; COMPANY - autocompletion interface
