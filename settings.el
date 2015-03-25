@@ -39,4 +39,4 @@ scroll-step 1)
 (show-paren-mode 1)
 
 ;; load zenburn theme - needs installation for melpa
-(load-theme 'zenburn t)
+(load-theme 'sanityinc-tomorrow-night t)
