@@ -1,3 +1,160 @@
+2015-03-24  Michael Albinus  <michael.albinus@gmx.de>
+
+	* tramp-sh.el (tramp-do-file-attributes-with-ls)
+	(tramp-do-file-attributes-with-stat): Quote file names in output.
+	(tramp-do-directory-files-and-attributes-with-stat): Use "//" as marker.
+
+2015-03-18  Michael Albinus  <michael.albinus@gmx.de>
+
+	* tramp-sh.el (tramp-do-directory-files-and-attributes-with-stat):
+	Mark apostrophs with ?/ instead of \037.  (Bug#20117)
+
+2015-03-17  Michael Albinus  <michael.albinus@gmx.de>
+
+	* tramp-sh.el (tramp-ssh-controlmaster-options): Change test for
+	ControlPath in order to avoid DNS timeouts.  (Bug#20015)
+	(tramp-maybe-send-script): Avoid leading tabs in shell scripts.
+	(Bug#20118)
+
+2015-03-15  Michael Albinus  <michael.albinus@gmx.de>
+
+	* tramp-adb.el:
+	* tramp-gvfs.el:
+	* tramp-sh.el:
+	* tramp-smb.el: Set tramp-autoload cookie for all defcustoms.
+
+	* tramp.el (tramp-ssh-controlmaster-options)
+	(tramp-use-ssh-controlmaster-options): Move them to tramp-sh.el.
+	(tramp-default-method): Do not check for
+	`tramp-ssh-controlmaster-options'.
+
+	* tramp-sh.el (tramp-use-ssh-controlmaster-options):
+	New defcustom, moved from tramp.el.
+	(tramp-ssh-controlmaster-options): New defvar, moved from tramp.el
+	but with a nil initial value.
+	(tramp-ssh-controlmaster-options): New defun.
+	(tramp-do-copy-or-rename-file-out-of-band)
+	(tramp-maybe-open-connection): Use it.  (Bug#20015)
+
+2015-03-04  Michael Albinus  <michael.albinus@gmx.de>
+
+	* tramp.el (tramp): Add :link property.
+
+2015-02-15  Michael Albinus  <michael.albinus@gmx.de>
+
+	* tramp-sh.el (tramp-do-directory-files-and-attributes-with-stat)
+	(tramp-sh-handle-file-name-all-completions)
+	(tramp-sh-handle-delete-directory)
+	(tramp-sh-handle-expand-file-name, tramp-sh-handle-process-file):
+	Normalize use of "cd".
+
+2015-02-15  Jérémy Compostella  <jeremy.compostella@gmail.com>
+
+	* tramp-sh.el (tramp-remote-process-environment): Disable paging
+	with PAGER=cat.  (Bug#19870)
+
+2015-02-09  Paul Eggert  <eggert@cs.ucla.edu>
+
+	Port to platforms lacking test -a and -o
+
+	* tramp-sh.el (tramp-find-executable): Prefer '&&' to 'test -a'.
+
+2015-02-08  Michael Albinus  <michael.albinus@gmx.de>
+
+	* tramp.el (tramp-login-prompt-regexp): Allow also "user", as
+	required by Fritz!Box telnet.
+
+2015-02-04  Michael Albinus  <michael.albinus@gmx.de>
+
+	* tramp.el (tramp-handle-unhandled-file-name-directory): Return
+	nil when required by the spec.
+
+	* tramp-sh.el (tramp-get-inline-coding): Set `default-directory'
+	to a local directory.  Sporadically, `call-process-region' does
+	not handle a remote default directory properly.
+
+2015-02-03  Michael Albinus  <michael.albinus@gmx.de>
+
+	* tramp.el (tramp-ssh-controlmaster-options): Don't use a tempfile
+	for ControlPath.  (Bug#19702)
+
+	* tramp-sh.el (tramp-histfile-override): Use t instead of 'unset.
+	(tramp-open-shell, tramp-maybe-open-connection): Set also
+	HISTFILESIZE and HISTSIZE when needed.  (Bug#19731)
+
+2015-02-02  Michael Albinus  <michael.albinus@gmx.de>
+
+	* tramp.el (tramp-ssh-controlmaster-options): Use "%C" for
+	ControlPath if possible.  (Bug#19702)
+
+	* tramp-sh.el (tramp-histfile-override): Add another choice
+	'unset.  Use it as default.
+	(tramp-open-shell, tramp-maybe-open-connection): Support it.
+	(Bug#19731)
+
+2015-02-01  Michael Albinus  <michael.albinus@gmx.de>
+
+	* tramp-adb.el (tramp-adb-ls-toolbox-regexp): Fix regexp in order
+	to support file names starting with a space.
+
+	* tramp-sh.el (tramp-perl-file-attributes)
+	(tramp-perl-directory-files-and-attributes): Escape apostrophes in
+	file names.
+	(tramp-do-file-attributes-with-stat): Quote file name.
+	(tramp-sh-handle-directory-files-and-attributes): Fall back to
+	`tramp-handle-directory-files-and-attributes' in case of problems.
+	(tramp-do-directory-files-and-attributes-with-stat): Do not use \0
+	as delimeter.  Use the `quoting-style' arg of `ls' if possible.
+	(tramp-sh-handle-file-name-all-completions): Use arguments of `ls'
+	in proper order.
+	(tramp-sh-handle-delete-directory): Goto root directory before deleting.
+	(tramp-get-remote-locale): Accept also \r in output.
+	(tramp-get-ls-command-with-quoting-style): New defun.
+
+2015-01-25  Michael Albinus  <michael.albinus@gmx.de>
+
+	* tramp-adb.el (tramp-adb-handle-directory-files-and-attributes):
+	Quote all remote file names.
+
+2015-01-23  Michael Albinus  <michael.albinus@gmx.de>
+
+	* tramp.el (tramp-autoload-file-name-handler): Use "/".
+
+	* tramp-compat.el (tramp-compat-temporary-file-directory): Revert patch.
+
+2015-01-22  Michael Albinus  <michael.albinus@gmx.de>
+
+	* tramp.el (tramp-autoload-file-name-handler):
+	Use `tramp-compat-temporary-file-directory'.
+
+	* tramp-compat.el (tramp-compat-temporary-file-directory): Autoload it.
+
+2015-01-20  Michael Albinus  <michael.albinus@gmx.de>
+
+	* tramp-sh.el (tramp-do-directory-files-and-attributes-with-stat):
+	Make it also working for file names with apostrophes.
+
+2015-01-18  Zhongwei Yao  <ashi08104@gmail.com>
+
+	* tramp-adb.el (tramp-adb-connect-if-not-connected): New user option.
+	(tramp-methods): Add `tramp-default-port' for "adb".
+	(tramp-adb-parse-device-names): Add traces.  Return device names
+	with port, if present.
+	(tramp-adb-get-device): New defun.
+	(tramp-adb-execute-adb-command, tramp-adb-maybe-open-connection):
+	Use it.
+	(tramp-adb-maybe-open-connection): Set `tramp-current-*'
+	variables.  Remove checks for listed devices.
+
+2015-01-13  Michael Albinus  <michael.albinus@gmx.de>
+
+	* tramp.el (tramp-handle-file-notify-rm-watch): Do not check in
+	`file-notify-descriptors', the implementation has been changed.
+
+	* tramp-cache.el (tramp-dump-connection-properties):
+	* tramp-sh.el (tramp-do-copy-or-rename-file-via-buffer)
+	(tramp-sh-handle-file-local-copy): Use `with-temp-file'.
+
 2014-12-29  Michael Albinus  <michael.albinus@gmx.de>
 
 	Version 2.2.11 released.

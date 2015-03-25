@@ -1,3 +1,62 @@
+2015-03-24  Michael Albinus  <michael.albinus@gmx.de>
+
+	* tramp-tests.el (tramp-test18-file-attributes)
+	(tramp--test-check-files): Extend tests.
+	(tramp-test31-utf8): Do not skip for tramp-adb.el.
+
+2015-03-17  Ken Brown  <kbrown@cornell.edu>
+
+	* tramp-tests.el (tramp--test-special-characters): Don't test "\t"
+	in file names on Cygwin.  (Bug#20119)
+
+2015-02-22  Michael Albinus  <michael.albinus@gmx.de>
+
+	* tramp-tests.el (tramp-test17-insert-directory):
+	Suppress localized settings in order to have a proper check for
+	the summary line.
+
+2015-02-04  Michael Albinus  <michael.albinus@gmx.de>
+
+	* tramp-tests.el (tramp-test06-directory-file-name): Fix docstring
+	and last test.
+	(tramp-test08-file-local-copy): Extend test.
+	(tramp-test17-insert-directory): Do not expect any order in
+	directory listing.
+
+2015-02-01  Michael Albinus  <michael.albinus@gmx.de>
+
+	* tramp-tests.el (top): Declare `tramp-get-remote-stat' and
+	`tramp-get-remote-perl'.
+	(tramp--test-check-files): Fix doxstring.  Add symlink test.
+	(tramp--test-special-characters): New defun.  Use body from
+	`tramp-test30-special-characters'.  Adapt check for tramp-adb.el.
+	(tramp-test30-special-characters): Use it.
+	(tramp--test-utf8): New defun.  Use body from
+	`tramp-test31-utf8'.  Add test string.
+	(tramp-test31-utf8): Use it.
+	(tramp-test30-special-characters-with-stat)
+	(tramp-test30-special-characters-with-perl)
+	(tramp-test30-special-characters-with-ls):
+	(tramp-test31-utf8-with-stat, tramp-test31-utf8-with-perl)
+	(tramp-test31-utf8-with-ls): New tests.
+
+2015-01-25  Michael Albinus  <michael.albinus@gmx.de>
+
+	* tramp-tests.el (tramp-test31-utf8): Skip for tramp-adb.el.
+
+2015-01-20  Michael Albinus  <michael.albinus@gmx.de>
+
+	* tramp-tests.el (tramp-test13-make-directory): Test also PARENTS arg.
+	(tramp--test-adb-p): New defun.
+	(tramp-test30-special-characters): Use it.
+	(tramp--test-check-files): Extend tests.
+
+2014-12-30  Michael Albinus  <michael.albinus@gmx.de>
+
+	* tramp-tests.el (tramp--test-smb-or-windows-nt-p): New defun.
+	(tramp-test30-special-characters): Use it.  (Bug#19463)
+	(tramp--test-check-files): Filter nil file names out.
+
 2014-12-29  Michael Albinus  <michael.albinus@gmx.de>
 
 	Version 2.2.11 released.

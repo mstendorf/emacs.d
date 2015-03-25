@@ -31,4 +31,3 @@
 (load "~/.emacs.d/keybindings.el")
 (load "~/.emacs.d/misc.el")
 #+end_src
-

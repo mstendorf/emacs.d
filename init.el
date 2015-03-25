@@ -1,8 +1,8 @@
 (package-initialize t)
-;(add-to-list 'load-path "~/.emacs.d/org-mode/lisp")
-;(add-to-list 'load-path "~/.emacs.d/org-mode/contrib/lisp")
-;(add-to-list 'load-path "~/.emacs.d/tramp/lisp" t)
-;(require 'org)
+(add-to-list 'load-path "~/.emacs.d/org-mode/lisp")
+(add-to-list 'load-path "~/.emacs.d/org-mode/contrib/lisp")
+(add-to-list 'load-path "~/.emacs.d/tramp/lisp")
+(require 'org)
 ;load dorf specific config!
 (org-babel-load-file "~/.emacs.d/dorf.org")
 
