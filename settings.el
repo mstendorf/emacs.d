@@ -37,3 +37,6 @@ scroll-step 1)
 (setq delete-old-versions t)
 ;; show related parenteses by highlighting
 (show-paren-mode 1)
+
+;; load zenburn theme - needs installation for melpa
+(load-theme 'zenburn t)

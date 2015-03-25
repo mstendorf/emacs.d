@@ -2,6 +2,9 @@
 
 ;; ----- ido-last-directory-list -----
 (
+ ("/usr/home/mas/code/bassunix/docmanager/" . "src/")
+ ("/usr/home/mas/code/bassunix/" . "docmanager/")
+ ("/usr/home/mas/code/" . "bassunix/")
  ("/" . "root/")
  ("/usr/home/mas/bassunix/trunk/libspy/" . "src/")
  ("/usr/home/mas/bassunix/trunk/" . "libspy/")
@@ -11,6 +14,8 @@
 
 ;; ----- ido-work-directory-list -----
 (
+ "/usr/home/mas/code/bassunix/docmanager/src/"
+ "/usr/home/mas/org/"
  "/home/mas/"
  "/root/.emacs.d/"
  "/usr/home/mas/bassunix/trunk/libspy/src/"
@@ -19,6 +24,8 @@
 
 ;; ----- ido-work-file-list -----
 (
+ "docmanager.cpp"
+ "plan.org"
  "radiusCoa.cpp"
  "modules.el"
  "graphical.el"
@@ -31,6 +38,18 @@
 
 ;; ----- ido-dir-file-cache -----
 (
+ ("/usr/home/mas/code/bassunix/docmanager/src/" (21778 33252 0 0) "#docmanager.cpp#" "utility.cpp" "test.sh" "pdflib.cpp" "main.cpp" "mail.cpp" "libpdf64.a" "iniparser.c" "inifile.cpp" "docscan.cpp" "docscan" "docmanager.cpp" "docmanager" "docimporter.cpp" "docimporter" "docimport.cpp" "block_parser.cpp" "barcode.cpp" "Makefile.in" "Makefile.am" "Makefile" "../" "./")
+
+ ("/usr/home/mas/code/bassunix/docmanager/" (21777 16302 0 0) "docmanager.core" "src/" "missing" "ltmain.sh" "install-sh" "include/" "depcomp" "data/" "configure.ac" "configure" "config.sub" "config.status" "config.log" "config.guess" "compile" "autom4te.cache/" "aclocal.m4" "README" "NEWS" "Makefile.in" "Makefile.am" "Makefile" "INSTALL" "ChangeLog" "COPYING" "AUTHORS" "../" "./")
+
+ ("/usr/home/mas/code/bassunix/" (21777 16307 0 0) "bindinsperioderAktiveProdukter.csv" "doctools/" "bassengine.log" "xosfdbtrack/" "xmlservice/" "xmlrpcservice/" "waooengine/" "wakeup/" "trackmac/" "test/" "tdcengine/" "sqlsnoop/" "snmpbackend/" "scripts/" "runconf.sh" "rapengine/" "queueserver/" "provoengine/" "prefix/" "php/" "make.conf" "m4/" "ltmain.sh" "libxos/" "libwaoo/" "libvcm/" "libutil/" "libtxos/" "libtr069/" "libticket/" "libtdcmhsi/" "libtdclua/" "libtdc/" "libspy/" "libserver/" "libraplua/" "libquickpay/" "libom/" "lua/" "libnomad/" "libnoc/" "libnavi/" "libkk1/" "libengine/" "libcronlua/" "libcpr/" "libcdr/" "libbilllua/" "libbilling/" "libbasslua/" "libbass/" "jsonrpcbackend/" "genpassword/" "docmanager/" "dhcpsnmp/" "dbexport/" "dbbackend/" "cronengine/" "cdrhandler/" "cdrbuffer/" "basslang/" "bassengine/" "Makefile" ".git/" "../" "./")
+
+ ("/usr/home/mas/code/" (21757 34118 0 0) "al2netConversion.php" "make.conf" "xmlrpcbackend.core" "access.log" "radiusCoa.cpp" "radiusTest" "tester.cpp" "bassapi/" "sql/" "bassunix/" "../" "./")
+
+ ("/usr/home/mas/org/" (21776 4154 0 0) "introduction.org~" "priv.org~" "plan.org~" "priv.org" "plan.org" "introduction.org" "../" "./")
+
+ ("/usr/home/mas/" (21777 25981 0 0) "pgsql.php" "billing_comp.php" "switchupdate.php" ".screenrc" "http-get.cpp" ".ssh/" "sbm_update.sql" ".login_conf~" "spycust.php" "#radiusCoa.cpp#" "key" "packet.txt" "dirlist.txt" "a.out" "FreeBSD9.3_install_script" "bassunix2/" ".gitignore~" "0.lua" "readius.html" "gdrive/" "xmlrpcbackend.core" "radiusTest" "org/" ".saves/" "access.log" "radiusCoa.cpp" "mysqlcpptest" "mysql_app" "deviceVman.php" ".grive" "testcode/" "httpget" ".emacs.d/" ".gitignore" "bassunix/" "code/" ".login_conf" ".cshrc" ".mailrc" ".profile" ".mail_aliases" ".shrc" ".login" ".rhosts" "../" "./")
+
  ("/root/.emacs.d/" (21777 20641 0 0) "ido.last~" "ido.last" "settings.el" "programming.el" "personal.el" "LICENSE" "README.md" "modules.el" "misc.el" "keybindings.el" "init.el" "graphical.el" "functions.el" "dorf.el" ".gitignore" "tramp/" "eshell/" "org-mode/" "org2blog/" ".git/" "auto-save-list/" "dorf.org" "elpa/" "../" "./")
 
  ("/home/mas/org/" (21776 4154 0 0) "introduction.org~" "priv.org~" "plan.org~" "priv.org" "plan.org" "introduction.org" "../" "./")

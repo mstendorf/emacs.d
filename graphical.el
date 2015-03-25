@@ -16,8 +16,6 @@
       ;highlight the current marked line
       (global-hl-line-mode 1)
       (set-face-background 'hl-line "midnight blue")
-;load the theme!
-      (load-theme 'deeper-blue t)
 
       ;; well since windows is what graphical means for me this goes here for now:
       (add-to-list 'exec-path "C:/Program Files (x86)/Aspell/bin/")
@@ -43,6 +41,6 @@
 ; this has to be last cause of some window error along the line in this config, figure out where
       (w32-send-sys-command 61488)
       )					;else
-  (load-theme 'wombat t)
+
   ;(xterm-mouse-mode 1)
   )
