@@ -36,6 +36,10 @@
 	 `(company-tooltip-common ((t (:inherit font-lock-constant-face))))))
 
 
+      ;; POWERLINE - awesome modeline!
+      (require 'powerline)
+      (powerline-default-theme)
+      (setq powerline-arrow-shape 'curve)
 
       ; start emacs in fullscreen (windows specific)
 ; this has to be last cause of some window error along the line in this config, figure out where
