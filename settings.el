@@ -40,3 +40,5 @@ scroll-step 1)
 
 ;; load zenburn theme - needs installation for melpa
 (load-theme 'sanityinc-tomorrow-night t)
+;; Do not write the freakin backup files everywhere! - We write to .saves in the users homedirectory
+(setq backup-directory-alist `(("." . "~/.saves")))
