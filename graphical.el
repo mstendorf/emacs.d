@@ -45,6 +45,18 @@
 ; this has to be last cause of some window error along the line in this config, figure out where
       (w32-send-sys-command 61488)
       )					;else
+  ;; hack to make C-arrow work under putty terminal!
+  (define-key input-decode-map (kbd "ESC O D") (kbd "<C-left>"))
+  (define-key input-decode-map (kbd "ESC O C") (kbd "<C-right>"))
+  (define-key input-decode-map (kbd "ESC O A") (kbd "<C-up>"))
+  (define-key input-decode-map (kbd "ESC O B") (kbd "<C-down>"))
+
+
+
+
+
+
+
 
   ;(xterm-mouse-mode 1)
   )

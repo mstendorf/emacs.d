@@ -45,4 +45,4 @@
 (define-key emacs-lisp-mode-map (kbd "RET") 'newline-and-indent)
 
 ;; Magit really just need an initialiser
-(global-set-key "\M-g" 'magit-status)
+(global-set-key "\C-xg" 'magit-status)
