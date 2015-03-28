@@ -43,3 +43,6 @@
 (define-key c-mode-base-map (kbd "RET") 'newline-and-indent)
 (define-key web-mode-map (kbd "RET") 'newline-and-indent)
 (define-key emacs-lisp-mode-map (kbd "RET") 'newline-and-indent)
+
+;; Magit really just need an initialiser
+(global-set-key "\M-g" 'magit-status)
