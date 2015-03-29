@@ -29,9 +29,17 @@
       '(("t" "Todo" entry (file+headline "~/org/plan.org" "Tasks")
              "* TODO %?\n  %i\n  %a")
         ("j" "Journal" entry (file+datetree "~/org/journal.org")
-             "* %?\nEntered on %U\n  %i\n  %a")))
+             "* Event: %?\n\n  %i\n\n  From: %a")))
+
+(setq org-todo-keywords
+       '((sequence "TODO" "RESEARCH" "ACTIVE" "|" "DONE" "DELEGATED")))
+
+(setq org-todo-keyword-faces
+           '(("RESEARCH" . (:foreground "yellow" :weight bold)) ("STARTED" . "yellow")
+             ("ACTIVE" . (:foreground "lightblue" :weight bold))))
 ;try to color literal code blocks
 (setq org-src-fontify-natively t)
+
 
 ;; ORG2BLOG
 (require 'org2blog)
