@@ -30,13 +30,24 @@
              "* TODO %?\n  %i\n  %a")
         ("j" "Journal" entry (file+datetree "~/org/journal.org")
              "* Event: %?\n\n  %i\n\n  From: %a")))
-
+;; Alter TODO states for more trackabillity.
 (setq org-todo-keywords
-       '((sequence "TODO" "RESEARCH" "ACTIVE" "|" "DONE" "DELEGATED")))
+      (quote ((sequence "TODO(t)" "RESEARCH(r@/!)" "ACTIVE(a)" "|" "DONE(d)" "DELEGATED(e@/!)")
+              (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "PHONE" "MEETING"))))
+
+;; Select states fast by C-c C-t KEY
+(setq org-use-fast-todo-selection t)
 
 (setq org-todo-keyword-faces
-           '(("RESEARCH" . (:foreground "yellow" :weight bold)) ("STARTED" . "yellow")
-             ("ACTIVE" . (:foreground "lightblue" :weight bold))))
+      (quote (("TODO" :foreground "red" :weight bold)
+              ("ACTIVE" :foreground "light blue" :weight bold)
+              ("DONE" :foreground "forest green" :weight bold)
+	      ("DELEGATED" :foreground "green" :weight bold)
+              ("WAITING" :foreground "orange" :weight bold)
+              ("HOLD" :foreground "brown" :weight bold)
+              ("CANCELLED" :foreground "light grey" :weight bold)
+              ("MEETING" :foreground "yellow" :weight bold)
+              ("PHONE" :foreground "yellow" :weight bold))))
 ;try to color literal code blocks
 (setq org-src-fontify-natively t)
 

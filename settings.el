@@ -18,7 +18,7 @@
 ; auto reload buffers that change on disk so that we never edit stale buffers
 (global-auto-revert-mode)
 
-; do it for dired to, bu do itr silently
+; do it for dired to, but do it silently
 (setq global-auto-revert-non-file-buffers t)
 (setq auto-revert-verbose nil)
 
