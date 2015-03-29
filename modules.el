@@ -20,7 +20,17 @@
 
 ;; ORGMODE - The mother of all gods!
 (setq  org-agenda-files (list "~/org/")) ; i need to figure out how to manage this across machines
-; try to color literal code blocks
+(setq org-default-notes-file (concat org-directory "~/org/notes.org"))
+
+;; archiving for old TODO items
+(setq org-archive-location "~/archive.org::* From %s")
+;; org-mode capture templates: maybe org-mode need it's own file?
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/org/plan.org" "Tasks")
+             "* TODO %?\n  %i\n  %a")
+        ("j" "Journal" entry (file+datetree "~/org/journal.org")
+             "* %?\nEntered on %U\n  %i\n  %a")))
+;try to color literal code blocks
 (setq org-src-fontify-natively t)
 
 ;; ORG2BLOG
