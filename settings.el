@@ -42,3 +42,6 @@ scroll-step 1)
 (load-theme 'sanityinc-tomorrow-night t)
 ;; Do not write the freakin backup files everywhere! - We write to .saves in the users homedirectory
 (setq backup-directory-alist `(("." . "~/.saves")))
+
+;; HACK for magit to be able to push!!
+(setenv "GIT_ASKPASS" "git-gui--askpass")

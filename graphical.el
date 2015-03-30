@@ -46,17 +46,9 @@
       (w32-send-sys-command 61488)
       )					;else
   ;; hack to make C-arrow work under putty terminal!
-  (define-key input-decode-map (kbd "ESC O D") (kbd "<C-left>"))
-  (define-key input-decode-map (kbd "ESC O C") (kbd "<C-right>"))
-  (define-key input-decode-map (kbd "ESC O A") (kbd "<C-up>"))
-  (define-key input-decode-map (kbd "ESC O B") (kbd "<C-down>"))
-
-
-
-
-
-
-
-
+  (define-key input-decode-map (kbd "ESC [ D") (kbd "<C-left>"))
+  (define-key input-decode-map (kbd "ESC [ C") (kbd "<C-right>"))
+  (define-key input-decode-map (kbd "ESC [ A") (kbd "<C-up>"))
+  (define-key input-decode-map (kbd "ESC [ B") (kbd "<C-down>"))
   ;(xterm-mouse-mode 1)
   )
