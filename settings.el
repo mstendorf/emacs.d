@@ -44,4 +44,6 @@ scroll-step 1)
 (setq backup-directory-alist `(("." . "~/.saves")))
 
 ;; HACK for magit to be able to push!!
-(setenv "GIT_ASKPASS" "git-gui--askpass")
+;(setenv "GIT_ASKPASS" "git-gui--askpass")
+(setenv "SSH_ASKPASS" "git-gui--askpass")
+;(setq magit-process-connection-type t)
