@@ -47,3 +47,7 @@
 
 ;; Magit really just need an initialiser
 (global-set-key "\C-xg" 'magit-status)
+
+;; ELPY
+(define-key yas-minor-mode-map (kbd "C-c k") 'yas-expand)
+(define-key yas-minor-mode-map (kbd "C-c o") 'iedit-mode)

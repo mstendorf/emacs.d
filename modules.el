@@ -71,3 +71,8 @@
 (flex-autopair-mode 1)
 ;; (add-to-list 'tramp-default-proxies-alist
 ;; 	     '((regexp-quote (system-name)) nil nil))
+
+
+;; ELPY - for python editing, i'm new to python, any help is appreciated.
+;; need devel/py-pip and run 'pip install elpy rope jedi'
+(elpy-enable)

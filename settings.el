@@ -7,6 +7,8 @@
 (setq undo-limit 20000000)
 (setq undo-sring-limit 40000000)
 
+;; Never sound the alarm! CRIMERIDER!!
+(setq ring-bell-function 'ignore)
 
 ;setup the preference of UTF-8
 (setq locale-coding-system 'utf-8)
