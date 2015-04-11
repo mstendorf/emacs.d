@@ -17,7 +17,7 @@
 (global-set-key "\M-k" 'kill-this-buffer)
 (global-set-key "\C-K" 'kill-whole-line)
 (global-set-key "\M-D" 'backward-kill-word)
-(global-set-key "\M-j" 'pop-global-mark)
+(global-set-key "\C-j" 'pop-global-mark)
 ; C-x o is stupid, testing other stuff out at the moment, might even look in to some
 ; window switching mode at some point, but think thii'll do for now.
 (global-set-key [S-left] 'windmove-left)
@@ -47,3 +47,7 @@
 
 ;; Magit really just need an initialiser
 (global-set-key "\C-xg" 'magit-status)
+
+;; ELPY
+(define-key yas-minor-mode-map (kbd "C-c k") 'yas-expand)
+(define-key yas-minor-mode-map (kbd "C-c o") 'iedit-mode)
