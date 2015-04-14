@@ -1,5 +1,6 @@
 ;; General preferences and settings file, nothing fancy here really.
 
+;; This is a comment to test waffle.io
 ;; fill paragraph - wtf is dis man? TODO: Figure this out haha
 (setq org-list-allow-alphabetical t)
 
