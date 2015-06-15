@@ -1,5 +1,6 @@
 ;; This is the main configuration for major modes
 
+
 ;; IDO
 ;ido mode is just to awesome to miss
 (require 'ido)
@@ -67,8 +68,8 @@
 
 
 ;; FLEX - auto insert paired bracers and strins
-(require 'flex-autopair)
-(flex-autopair-mode 1)
+;(require 'flex-autopair)
+;(flex-autopair-mode 1)
 ;; (add-to-list 'tramp-default-proxies-alist
 ;; 	     '((regexp-quote (system-name)) nil nil))
 
@@ -76,3 +77,10 @@
 ;; ELPY - for python editing, i'm new to python, any help is appreciated.
 ;; need devel/py-pip and run 'pip install elpy rope jedi'
 (elpy-enable)
+
+
+;; Smart parens, to have nice parentesis handling
+
+(require 'smartparens-config)
+(smartparens-global-mode 1)
+(smartparens-strict-mode t)
