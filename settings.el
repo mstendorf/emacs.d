@@ -53,3 +53,7 @@ scroll-step 1)
 ;(setenv "GIT_ASKPASS" "git-gui--askpass")
 (setenv "SSH_ASKPASS" "git-gui--askpass")
 ;(setq magit-process-connection-type t)
+
+;; Make magit behave.... REALLY????
+(setq magit-last-seen-setup-instructions "1.4.0")
+(setq python-shell-interpreter "python3.4")
