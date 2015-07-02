@@ -77,7 +77,7 @@
 ;; ELPY - for python editing, i'm new to python, any help is appreciated.
 ;; need devel/py-pip and run 'pip install elpy rope jedi'
 (elpy-enable)
-
+(highlight-indentation-mode -1)
 
 ;; Smart parens, to have nice parentesis handling
 

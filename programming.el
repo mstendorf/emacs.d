@@ -38,3 +38,7 @@
 (defadvice lua-electric-match (around last-command-char-fixup activate)
   (let ((last-command-char last-command-event))
     ad-do-it))
+
+;; remove the highlight indentation mode from elpy
+(setq elpy-modules (delq 'elpy-module-highlight-indentation
+			          elpy-modules))
