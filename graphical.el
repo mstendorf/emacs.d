@@ -41,9 +41,7 @@
       (powerline-default-theme)
       (setq powerline-arrow-shape 'curve)
 
-      ; start emacs in fullscreen (windows specific)
-; this has to be last cause of some window error along the line in this config, figure out where
-      (w32-send-sys-command 61488)
+
       )					;else
   ;; hack to make C-arrow work under putty terminal!
   (define-key input-decode-map (kbd "ESC [ D") (kbd "<C-left>"))

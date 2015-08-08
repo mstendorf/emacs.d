@@ -1,3 +1,6 @@
+;; full screen as the first thing!
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
 (package-initialize t)
 (add-to-list 'load-path "~/.emacs.d/org-mode/lisp")
 (add-to-list 'load-path "~/.emacs.d/org-mode/contrib/lisp")
