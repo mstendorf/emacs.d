@@ -126,7 +126,7 @@ scroll-step 1)
 ;(setenv "SSH_ASKPASS" "git-gui--askpass")
 
 ;; Yep, 3.4 is the default to me now.
-;(setq python-shell-interpreter "python3.4")
+(setq python-shell-interpreter "python3.4")
 #+END_SRC
 
 The following function for ~occur-dwim~ is taken from [[https://github.com/abo-abo][Oleh Krehel]] from
