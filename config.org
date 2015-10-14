@@ -183,47 +183,6 @@ at point as the default value for occur.
   )
 
 #+END_SRC
-* Themes
-** Cyberpunk theme
-
-The [[https://github.com/n3mo/cyberpunk-theme.el][cyberpunk theme]] is dark and colorful. However, I don't like the
-boxes around the mode line.
-
-#+begin_src emacs-lisp
-(use-package cyberpunk-theme
-  :ensure t
-)
-#+end_src
-
-Normally, switching themes is a multi-step process with ~disable-theme~ and ~load-theme~. The
-~switch-theme~ function will do that in one swoop. I just choose which
-theme I want to go to.
-
-** Solarized theme
-
-Here's some configuration for [[https://github.com/bbatsov/solarized-emacs/][bbatsov's solarized themes]].
-
-#+begin_src emacs-lisp
-(use-package solarized-theme
-  :init
-  (setq solarized-use-variable-pitch nil)
-  :ensure t)
-#+end_src
-
-** Monokai theme
-
-#+begin_src emacs-lisp
-(setq monokai-use-variable-pitch nil)
-#+end_src
-** Sanity-inc theme
-
-#+begin_src emacs-lisp
-(use-package color-theme-sanityinc-tomorrow
-  :ensure t
-  :init
-  (progn
-    (load-theme 'sanityinc-tomorrow-night t)))
-#+end_src
 * Functions
 This section is for functions and other helper stuff used by this config, or via by M-x
 ** Navigation
@@ -317,10 +276,40 @@ point."
   (interactive)
   (mapc #'disable-theme custom-enabled-themes))
 
-(bind-key "s-<f12>" 'switch-theme)
-(bind-key "s-<f11>" 'disable-active-themes)
+(bind-key "C-<f12>" 'switch-theme)
+(bind-key "C-<f11>" 'disable-active-themes)
 #+end_src
 
+* Themes
+
+Normally, switching themes is a multi-step process with ~disable-theme~ and ~load-theme~. The
+~switch-theme~ function will do that in one swoop. I just choose which
+theme I want to go to.
+** Solarized theme
+
+Here's some configuration for [[https://github.com/bbatsov/solarized-emacs/][bbatsov's solarized themes]].
+
+#+begin_src emacs-lisp
+(use-package solarized-theme
+  :init
+  (setq solarized-use-variable-pitch nil)
+  :ensure t)
+#+end_src
+
+** Monokai theme
+
+#+begin_src emacs-lisp
+(setq monokai-use-variable-pitch nil)
+#+end_src
+** Sanity-inc theme
+
+#+begin_src emacs-lisp
+(use-package color-theme-sanityinc-tomorrow
+  :ensure t
+  :init
+  (progn
+    (load-theme 'sanityinc-tomorrow-night t)))
+#+end_src
 * List buffers
 
 ibuffer is the improved version of list-buffers.
@@ -808,12 +797,16 @@ This is a autocompletion framework for emacs
 (use-package company
    :ensure t
    :init (progn
-           (add-hook 'after-init-hook 'global-company-mode))
+           (add-hook 'python-mode-hook 'jedi:setup)
+           (setq jedi:setup-keys t)
+           (setq jedi:complete-on-dot t))
    :config
    (progn
-      (setq company-backends (delete 'company-semantic company-backends))
+      (add-hook 'after-init-hook 'global-company-mode)
       (use-package company-jedi
-          :ensure t)))
+          :ensure t)
+      (autoload 'jedi:setup "jedi" nil t)
+      (setq company-backends (delete 'company-semantic company-backends))))
 
 #+END_SRC
 ** Edit With Emacs
@@ -933,13 +926,9 @@ Elpy helps with completion suggestions through company
    :init (progn
        (elpy-enable)
        (highlight-indentation-mode -1)
-       (autoload 'jedi:setup "jedi" nil t)
-       (add-hook 'python-mode-hook 'jedi:setup)
-       (setq jedi:setup-keys t)
-       (setq jedi:complete-on-dot t)
        ;; remove the highlight indentation mode from elpy
        (setq elpy-modules (delq 'elpy-module-highlight-indentation
-                             elpy-modules))))
+                                 elpy-modules))))
 #+END_SRC
 ** Restclient
 
