@@ -796,19 +796,41 @@ This is a autocompletion framework for emacs
 #+BEGIN_SRC emacs-lisp
 (use-package company
    :ensure t
-   :init (progn
-           (add-hook 'python-mode-hook 'jedi:setup)
-           (setq jedi:setup-keys t)
-           (setq jedi:complete-on-dot t))
-   :config
+   :init
    (progn
-      (add-hook 'after-init-hook 'global-company-mode)
-      (use-package company-jedi
-          :ensure t)
-      (autoload 'jedi:setup "jedi" nil t)
-      (setq company-backends (delete 'company-semantic company-backends))))
+     (elpy-enable)
+     (add-hook 'after-init-hook 'global-company-mode))
+   :config
+   (setq company-backends (delete 'company-semantic company-backends)))
+
 
 #+END_SRC
+** Python
+
+Integrates with IPython.
+
+#+begin_src emacs-lisp :tangle no
+(use-package python-mode
+  :ensure t
+  :init (progn
+          (elpy-enable)))
+#+end_src
+
+*** elpy
+Elpy helps with completion suggestions through company
+#+BEGIN_SRC emacs-lisp
+(use-package elpy
+   :ensure t
+   :init (progn
+       (elpy-enable)
+       (setq elpy-rpc-backend "jedi")
+       (setq elpy-rpc-python-command "python3")
+       (highlight-indentation-mode -1)
+       ;; remove the highlight indentation mode from elpy
+       (setq elpy-modules (delq 'elpy-module-highlight-indentation
+                                 elpy-modules))))
+#+END_SRC
+
 ** Edit With Emacs
 
 THIS IS NOT MINE!
@@ -907,29 +929,6 @@ http://batsov.com/projectile/
       :ensure t)))
 #+end_src
 
-** Python
-
-Integrates with IPython.
-
-#+begin_src emacs-lisp :tangle no
-(use-package python-mode
-  :ensure t
-  :init (progn
-          (elpy-enable)))
-#+end_src
-
-*** elpy
-Elpy helps with completion suggestions through company
-#+BEGIN_SRC emacs-lisp
-(use-package elpy
-   :ensure t
-   :init (progn
-       (elpy-enable)
-       (highlight-indentation-mode -1)
-       ;; remove the highlight indentation mode from elpy
-       (setq elpy-modules (delq 'elpy-module-highlight-indentation
-                                 elpy-modules))))
-#+END_SRC
 ** Restclient
 
 See [[http://emacsrocks.com/e15.html][Emacs Rocks! Episode 15]] to learn how restclient can help out with
