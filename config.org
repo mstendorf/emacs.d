@@ -397,7 +397,7 @@ speed keys in Org mode]].
 (setq org-archive-location "~/.emacs.d/org/archive.org::* From %s")
 ;; org-mode capture templates: maybe org-mode need it's own file?
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/.emacs.d/org/plan.org" "Tasks")
+      '(("t" "Todo" entry (file+headline "~/.emacs.d/org/Agenda/plan.org" "Tasks")
              "* TODO %?\n  %i\n  %a")
         ("j" "Journal" entry (file+datetree "~/.emacs.d/org/journal.org")
              "* Event: %?\n\n  %i\n\n  From: %a")))
