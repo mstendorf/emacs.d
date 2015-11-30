@@ -617,6 +617,8 @@ Convenient bindings to navigate between windows.
 #+BEGIN_SRC emacs-lisp
 (global-set-key [S-left] 'windmove-left)
 (global-set-key [S-right] 'windmove-right)
+(global-set-key [S-up] 'windmove-up)
+(global-set-key [S-down] 'windmove-down)
 (global-set-key "\M-o" 'other-window)
 #+END_SRC
 
