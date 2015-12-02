@@ -759,14 +759,6 @@ No more juggling windows after commiting. It's magit bliss.
   :ensure t)
 #+end_src
 
-** Expand region
-
-#+begin_src emacs-lisp
-(use-package expand-region
-  :ensure t
-  :bind ("C-@" . er/expand-region))
-#+end_src
-
 ** Flycheck
 
 Still need to set up hooks so that flycheck automatically runs in
