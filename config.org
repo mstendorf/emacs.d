@@ -380,8 +380,7 @@ Learned about [[https://github.com/sachac/.emacs.d/blob/83d21e473368adb1f63e582a
 Speed commands are a nice and quick way to perform certain actions
 while at the beginning of a heading. It's not activated by default.
 
-See the doc for speed keys by checking out [[elisp:(info%20"(org)%20speed%20keys")][the documentation for
-speed keys in Org mode]].
+See the doc for speed keys by checking out [[elisp:(info%20"(org)%20speed%20keys")][the documentation for speed keys in Org mode]].
 
 #+begin_src emacs-lisp
 (setq org-use-speed-commands t)
@@ -397,15 +396,21 @@ speed keys in Org mode]].
 (setq org-archive-location "~/.emacs.d/org/archive.org::* From %s")
 ;; org-mode capture templates: maybe org-mode need it's own file?
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/.emacs.d/org/Agenda/plan.org" "Tasks")
+      '(("t" "Todo" entry (file+headline "~/.emacs.d/org/Agenda/plan.org" "Ad-hoc")
              "* TODO %?\n  %i\n  %a")
         ("j" "Journal" entry (file+datetree "~/.emacs.d/org/journal.org")
              "* Event: %?\n\n  %i\n\n  From: %a")))
 ;; Alter TODO states for more trackabillity.
 (setq org-todo-keywords
-      (quote ((sequence "TODO(t)" "RESEARCH(r@/!)" "ACTIVE(a)" "|" "DONE(d)" "DELEGATED(e@/!)")
+      (quote ((sequence "TODO(t)" "RESEARCH(r@/!)" "ACTIVE(a)" "|" "DONE(d!)" "DELEGATED(e@/!)")
               (sequence "WAITING(w@/!)" "HOLD(h@/!)" "|" "CANCELLED(c@/!)" "PHONE" "MEETING"))))
 
+;; set specific agenda optionn to onnly see tasks assigned to me
+(setq org-agenda-custom-commands
+'(("c" "My Agenda"
+((tags "ASSIGNEE={.+}")))))
+;; with all this loggin, put it in a seperate drawer.
+(setq org-log-into-drawer t)
 ;; Select states fast by C-c C-t KEY
 (setq org-use-fast-todo-selection t)
 
