@@ -1120,6 +1120,20 @@ creating a buffer to do some scratch work or reusing the initial
 
 
 #+END_SRC
+
+** docker
+Modes for handling docker
+#+BEGIN_SRC emacs-lisp
+;; docker mode for prettier docker files.
+(use-package dockerfile-mode
+   :ensure t
+)
+;; docker client (in for testing)
+(use-package docker
+   :ensure t
+)
+#+END_SRC
+
 * Programming
 I don't like the default way emacs handles tab when programming, as i used an IDE once...
 And I also like to indent automagically when pressing enter.
