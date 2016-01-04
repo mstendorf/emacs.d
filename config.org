@@ -1015,14 +1015,22 @@ This is just pure love when searching or refactoring.
 #+end_src
 
 ** Webmode
-
+I use web-mode for much of my web development, it works for javascript, html, php better
+than anything I could get my nasty fingers on.
 #+begin_src emacs-lisp :tangle no
 (use-package web-mode
-  :ensure t
-  :init ((add-to-list 'auto-mode-alist '("\\.php$" . web-mode))
-         (add-to-list 'auto-mode-alist '("\\.inc$" . web-mode)
-         (add-to-list 'auto-mode-alist '("\\.js$" . web-mode)
-         (add-to-list 'auto-mode-alist '("\\.html$" . web-mode))))))
+  :mode (("\\.html\\'" . web-mode)
+         ("\\.html\\.erb\\'" . web-mode)
+         ("\\.mustache\\'" . web-mode)
+         ("\\.jinja\\'" . web-mode)
+         ("\\.php\\'" . web-mode)
+         ("\\.js\\'" . web-mode))
+  :config
+  (progn
+    (setq web-mode-engines-alist
+          '(("\\.jinja\\'"  . "django")))))
+
+(provide 'init-web-mode)
 #+end_src
 
 ** Yasnippet
