@@ -1017,21 +1017,32 @@ This is just pure love when searching or refactoring.
 ** Webmode
 I use web-mode for much of my web development, it works for javascript, html, php better
 than anything I could get my nasty fingers on.
-#+begin_src emacs-lisp :tangle no
+#+begin_src emacs-lisp
 (use-package web-mode
-  :mode (("\\.html\\'" . web-mode)
-         ("\\.html\\.erb\\'" . web-mode)
-         ("\\.mustache\\'" . web-mode)
-         ("\\.jinja\\'" . web-mode)
-         ("\\.php\\'" . web-mode)
-         ("\\.js\\'" . web-mode))
+  :ensure t
+  :init
+  (add-to-list 'auto-mode-alist '("\\.html$" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.html\\.erb$" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.mustache$" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.jinja$" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.php$" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.js$" . web-mode))
   :config
   (progn
     (setq web-mode-engines-alist
-          '(("\\.jinja\\'"  . "django")))))
+          '(("\\.jinja$'"  . "django")))))
 
 (provide 'init-web-mode)
 #+end_src
+
+** YAML mode
+Docker-compose is based on yaml files, i like docker, and i like colors.
+#+BEGIN_SRC emacs-lisp
+(use-package yaml-mode
+  :ensure t
+  :init
+  (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode)))
+#+END_SRC
 
 ** Yasnippet
 
@@ -1112,6 +1123,7 @@ creating a buffer to do some scratch work or reusing the initial
 
 #+begin_src emacs-lisp
 (use-package doc-view
+  :ensure t
   :config
   (define-key doc-view-mode-map (kbd "<right>") 'doc-view-next-page)
   (define-key doc-view-mode-map (kbd "<left>") 'doc-view-previous-page))
