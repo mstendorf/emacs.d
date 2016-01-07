@@ -1144,13 +1144,15 @@ creating a buffer to do some scratch work or reusing the initial
 ** docker
 Modes for handling docker
 #+BEGIN_SRC emacs-lisp
-;; docker mode for prettier docker files.
-(use-package dockerfile-mode
-   :ensure t
-)
 ;; docker client (in for testing)
 (use-package docker
    :ensure t
+   :commands docker-mode
+)
+;; docker mode for prettier docker files.
+(use-package dockerfile-mode
+   :ensure t
+   :mode "Dockerfile.*\\'"
 )
 #+END_SRC
 
