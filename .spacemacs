@@ -44,6 +44,8 @@ values."
      javascript
      python
      dockerfile
+     ;;floobits
+     mu4e
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -254,19 +256,81 @@ in `dotspacemacs/user-config'."
    '(send-mail-function (quote smtpmail-send-it))
    '(smtpmail-smtp-server "84.238.0.3")
    '(smtpmail-smtp-service 25))
+
+
+  (setq org-agenda-files
+        (delq nil
+              (mapcar (lambda (x) (and (file-exists-p x) x))
+                      '("~/.org/Agenda"))))
+  (setq org-default-notes-file "~/.org/notes.org")
+  (setq org-use-speed-commands t)
+  (setq org-image-actual-width 550)
+  ;; archiving for old TODO items
+  (setq org-archive-location "~/.org/archive.org::* From %s")
+  ;; org-mode capture templates: maybe org-mode need it's own file?
+  (setq org-capture-templates
+        '(("t" "Todo" entry (file+headline "~/.org/Agenda/plan.org" "Ad-hoc")
+           "* TODO %?\n  %i\n  %a")
+          ("j" "Journal" entry (file+datetree "~/.org/Agenda/journal.org")
+           "* Event: %?\n\n  %i\n\n  From: %a")))
+  ;; Alter TODO states for more trackabillity.
+  (setq org-todo-keywords
+        (quote ((sequence "TODO(t)" "RESEARCH(r@/!)" "ACTIVE(a!)" "|" "FINISHED(f!)" "DONE(d!)"  "CANCELLED(c@/!)"))))
+
+  ;; set specific agenda optionn to onnly see tasks assigned to me
+  (setq org-agenda-custom-commands
+        '(("c" "My Agenda"
+           ((tags "ASSIGNEE={.+}")))))
+  ;; with all this loggin, put it in a seperate drawer.
+  (setq org-log-into-drawer t)
+  ;; Select states fast by C-c C-t KEY
+  (setq org-use-fast-todo-selection t)
+
+  (setq org-todo-keyword-faces
+        (quote (("TODO" :foreground "red" :weight bold)
+                ("ACTIVE" :foreground "light blue" :weight bold)
+                ("DONE" :foreground "forest green" :weight bold)
+                ("DELEGATED" :foreground "green" :weight bold)
+                ("WAITING" :foreground "orange" :weight bold)
+                ("HOLD" :foreground "brown" :weight bold)
+                ("CANCELLED" :foreground "light grey" :weight bold)
+                ("MEETING" :foreground "yellow" :weight bold)
+                ("PHONE" :foreground "yellow" :weight bold))))
+                                        ;try to color literal code blocks
+  (setq org-src-fontify-natively t
+        org-src-window-setup 'current-window
+        org-src-strip-leading-and-trailing-blank-lines t
+        org-src-preserve-indentation t
+        org-src-tab-acts-natively t)
+
+
   )
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
-  (setq org2blog/wp-blog-alist
-        '(("dorfzone"
-           :url "http://dorfzone.dk/xmlrpc.php"
-           :username "admin"
-           :default-categories ("Uncategorized")
-           :default-options "toc:4 h:4"
-           :default-title "TITLE HERE!")))
+
+
+
+
+
+
+  ;; ERC configuration...
+  (setq erc-server "irc.freenode.net"
+        erc-port 6667
+        erc-nick "Dorfen"
+        erc-user-full-name "Dorfen"
+        erc-email-userid "mstendorf@gmail.com")
+  ;; check channels
+  (erc-track-mode t)
+  (setq erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE"
+                                  "324" "329" "332" "333" "353" "477"))
+  ;; don't show any of this
+  (setq erc-hide-list '("JOIN" "PART" "QUIT" "NICK"))
+
+  ;; auto join activated
+  (erc-autojoin-mode t)
   (bind-key "s-M-t" 'transpose-sexps)
   ;; some other personal convenience settings.
   (global-set-key "\C-K" 'kill-whole-line)
@@ -286,88 +350,118 @@ layers configuration. You are free to put any user code."
     (call-interactively 'occur))
 
   (bind-key "M-s o" 'occur-dwim)
-;; Function to move to beginning of code if somwhere else
-(defun my--back-to-indentation ()
-  "Move to indentation respecting `visual-line-mode'."
-  (if visual-line-mode
-      (flet ((beginning-of-line (arg) (beginning-of-visual-line arg)))
-        (back-to-indentation))
-    (back-to-indentation)))
+  ;; Function to move to beginning of code if somwhere else
+  (defun my--back-to-indentation ()
+    "Move to indentation respecting `visual-line-mode'."
+    (if visual-line-mode
+        (flet ((beginning-of-line (arg) (beginning-of-visual-line arg)))
+          (back-to-indentation))
+      (back-to-indentation)))
 
-;; funcition to move to beginning of line if at beginning of code
-(defun my--move-beginning-of-line (&optional arg)
-  "Move to beginning of line respecting `visual-line-mode'."
-  (if visual-line-mode
-      (beginning-of-visual-line arg)
-    (move-beginning-of-line arg)))
+  ;; funcition to move to beginning of line if at beginning of code
+  (defun my--move-beginning-of-line (&optional arg)
+    "Move to beginning of line respecting `visual-line-mode'."
+    (if visual-line-mode
+        (beginning-of-visual-line arg)
+      (move-beginning-of-line arg)))
 
-;; function implementing above written functions so this can be bound to C-a for easy moving around.
-(defun my-back-to-indentation-or-beginning (&optional arg)
-  "Jump back to indentation of the current line.  If already
+  ;; function implementing above written functions so this can be bound to C-a for easy moving around.
+  (defun my-back-to-indentation-or-beginning (&optional arg)
+    "Jump back to indentation of the current line.  If already
 there, jump to the beginning of current line.  If visual mode is
 enabled, move according to the visual lines."
-  (interactive "p")
-  (cond
-   ((and (functionp 'org-table-p)
-         (org-table-p))
-    (let ((eob (save-excursion
-                 (re-search-backward "|")
-                 (forward-char 1)
-                 (skip-chars-forward " ")
-                 (point))))
-      (if (= (point) eob)
-          (org-beginning-of-line)
-        (goto-char eob))))
-   ((eq major-mode 'dired-mode)
-    (if (= (point) (save-excursion
-                     (dired-move-to-filename)
-                     (point)))
-        (progn
-          (move-beginning-of-line 1)
-          (skip-syntax-forward " "))
-      (dired-move-to-filename)))
-   ((eq major-mode 'org-mode)
-    (org-beginning-of-line))
-   (t
-    (if (or (/= arg 1)
-            (= (point) (save-excursion
-                         (my--back-to-indentation)
-                         (point))))
-        (progn
-          (my--move-beginning-of-line arg)
-          (when (/= arg 1)
-            (my--back-to-indentation)))
-      (my--back-to-indentation)))))
+    (interactive "p")
+    (cond
+     ((and (functionp 'org-table-p)
+           (org-table-p))
+      (let ((eob (save-excursion
+                   (re-search-backward "|")
+                   (forward-char 1)
+                   (skip-chars-forward " ")
+                   (point))))
+        (if (= (point) eob)
+            (org-beginning-of-line)
+          (goto-char eob))))
+     ((eq major-mode 'dired-mode)
+      (if (= (point) (save-excursion
+                       (dired-move-to-filename)
+                       (point)))
+          (progn
+            (move-beginning-of-line 1)
+            (skip-syntax-forward " "))
+        (dired-move-to-filename)))
+     ((eq major-mode 'org-mode)
+      (org-beginning-of-line))
+     (t
+      (if (or (/= arg 1)
+              (= (point) (save-excursion
+                           (my--back-to-indentation)
+                           (point))))
+          (progn
+            (my--move-beginning-of-line arg)
+            (when (/= arg 1)
+              (my--back-to-indentation)))
+        (my--back-to-indentation)))))
 
-;; Company mode indent or autocomplete function
-; snippet i pulled and edited from emacs wiki as i  remember.. sry
-(defun indent-or-expand (arg)
-  "Either indent according to mode, or expand the word preceding
+  ;; Company mode indent or autocomplete function
+                                        ; snippet i pulled and edited from emacs wiki as i  remember.. sry
+  (defun indent-or-expand (arg)
+    "Either indent according to mode, or expand the word preceding
 point."
-  (interactive "*P")
-  (if (and
-       (or (bobp) (= ?w (char-syntax (char-before))))
-       (or (eobp) (not (= ?w (char-syntax (char-after))))))
-      (company-complete)
-    (indent-according-to-mode)))
+    (interactive "*P")
+    (if (and
+         (or (bobp) (= ?w (char-syntax (char-before))))
+         (or (eobp) (not (= ?w (char-syntax (char-after))))))
+        (company-complete)
+      (indent-according-to-mode)))
 
-(bind-key "C-a" 'my-back-to-indentation-or-beginning)
-(global-set-key [S-left] 'windmove-left)
-(global-set-key [S-right] 'windmove-right)
-(global-set-key [S-up] 'windmove-up)
-(global-set-key [S-down] 'windmove-down)
-(global-set-key "\M-o" 'other-window)
-(bind-key "s-C-<left>"  'shrink-window-horizontally)
-(bind-key "s-C-<right>" 'enlarge-window-horizontally)
-(bind-key "s-C-<down>"  'shrink-window)
-(bind-key "s-C-<up>"    'enlarge-window)
-(global-set-key "\M-f" 'find-file)
-(global-set-key "\M-F" 'find-file-other-window)
-(global-set-key "\M-b" 'switch-to-buffer)
-(global-set-key "\M-B" 'switch-to-buffer-other-window)
-(global-set-key "\M-k" 'kill-this-buffer)
-(spacemacs/set-leader-keys "fF" 'find-file-other-window)
-(spacemacs/set-leader-keys "bB" 'switch-to-buffer-other-window)
-) 
+  ;; setup mu4e config
+;;; Set up some common mu4e variables
+  (setq mu4e-maildir "~/.mail"
+        mu4e-trash-folder "/Trash"
+        mu4e-refile-folder "/Archive"
+        mu4e-get-mail-command "mbsync -a"
+        mu4e-update-interval nil
+        mu4e-compose-signature-auto-include nil
+        mu4e-view-show-images t
+        mu4e-view-show-addresses t)
+
+;;; Mail directory shortcuts
+  (setq mu4e-maildir-shortcuts
+        '(("/gmail/INBOX" . ?g)
+          ("/work/INBOX" . ?w)))
+
+;;; Bookmarks
+  (setq mu4e-bookmarks
+        `(("flag:unread AND NOT flag:trashed" "Unread messages" ?u)
+          ("date:today..now" "Today's messages" ?t)
+          ("date:7d..now" "Last 7 days" ?w)
+          ("mime:image/*" "Messages with images" ?p)
+          (,(mapconcat 'identity
+                       (mapcar
+                        (lambda (maildir)
+                          (concat "maildir:" (car maildir)))
+                        mu4e-maildir-shortcuts) " OR ")
+           "All inboxes" ?i)))
+
+
+  (bind-key "C-a" 'my-back-to-indentation-or-beginning)
+  (global-set-key [S-left] 'windmove-left)
+  (global-set-key [S-right] 'windmove-right)
+  (global-set-key [S-up] 'windmove-up)
+  (global-set-key [S-down] 'windmove-down)
+  (global-set-key "\M-o" 'other-window)
+  (bind-key "s-C-<left>"  'shrink-window-horizontally)
+  (bind-key "s-C-<right>" 'enlarge-window-horizontally)
+  (bind-key "s-C-<down>"  'shrink-window)
+  (bind-key "s-C-<up>"    'enlarge-window)
+  (global-set-key "\M-f" 'find-file)
+  (global-set-key "\M-F" 'find-file-other-window)
+  (global-set-key "\M-b" 'switch-to-buffer)
+  (global-set-key "\M-B" 'switch-to-buffer-other-window)
+  (global-set-key "\M-k" 'kill-this-buffer)
+  (spacemacs/set-leader-keys "fF" 'find-file-other-window)
+  (spacemacs/set-leader-keys "bB" 'switch-to-buffer-other-window)
+  ) 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
