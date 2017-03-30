@@ -18,6 +18,7 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
+     nginx
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -43,7 +44,6 @@ values."
      html
      javascript
      python
-     dockerfile
      ;;floobits
      mu4e
      )
@@ -266,17 +266,22 @@ in `dotspacemacs/user-config'."
   (setq org-use-speed-commands t)
   (setq org-image-actual-width 550)
   ;; archiving for old TODO items
-  (setq org-archive-location "~/.org/archive.org::* From %s")
+  (setq org-archive-location "~/.org/archive/archive.org::* From %s")
   ;; org-mode capture templates: maybe org-mode need it's own file?
   (setq org-capture-templates
-        '(("t" "Todo" entry (file+headline "~/.org/Agenda/plan.org" "Ad-hoc")
-           "* TODO %?\n  %i\n  %a")
-          ("j" "Journal" entry (file+datetree "~/.org/Agenda/journal.org")
-           "* Event: %?\n\n  %i\n\n  From: %a")))
+        '(("t" "Todo" entry (file+headline "~/.org/todo.org" "Ad-hoc")
+           "* TODO %?\n  %i\n")
+          ("n" "Note" entry (file "~/.org/notes.org")
+           "* %? %t\n  %i\n")
+          ("j" "Journal" entry (file+datetree "~/.org/journal.org")
+           "* %T: %?\n\n  %i\n")))
   ;; Alter TODO states for more trackabillity.
   (setq org-todo-keywords
         (quote ((sequence "TODO(t)" "RESEARCH(r@/!)" "ACTIVE(a!)" "|" "FINISHED(f!)" "DONE(d!)"  "CANCELLED(c@/!)"))))
-
+  (setq org-agenda-files (list "~/.org/todo.org"
+                               "~/.org/plan.org"
+                               "~/.org/notes.org"
+                               "~/.org/journal.org"))
   ;; set specific agenda optionn to onnly see tasks assigned to me
   (setq org-agenda-custom-commands
         '(("c" "My Agenda"
@@ -285,7 +290,9 @@ in `dotspacemacs/user-config'."
   (setq org-log-into-drawer t)
   ;; Select states fast by C-c C-t KEY
   (setq org-use-fast-todo-selection t)
-
+  (with-eval-after-load 'org-agenda
+    (require 'org-projectile)
+    (push (org-projectile:todo-files) org-agenda-files))
   (setq org-todo-keyword-faces
         (quote (("TODO" :foreground "red" :weight bold)
                 ("ACTIVE" :foreground "light blue" :weight bold)
@@ -337,7 +344,7 @@ layers configuration. You are free to put any user code."
   (global-set-key "\M-D" 'backward-kill-word)
   (global-set-key "\C-j" 'pop-global-mark)
   (blink-cursor-mode -1)
-  (setq python-shell-interpreter "python3.4")
+  (setq python-shell-interpreter "python3")
   (defun occur-dwim ()
     "Call `occur' with a sane default."
     (interactive)
@@ -460,7 +467,9 @@ point."
   (global-set-key "\M-b" 'switch-to-buffer)
   (global-set-key "\M-B" 'switch-to-buffer-other-window)
   (global-set-key "\M-k" 'kill-this-buffer)
-  (spacemacs/set-leader-keys "fF" 'find-file-other-window)
+  (spacemacs/set-leader-keys "ff" 'ido-find-file)
+  (spacemacs/set-leader-keys "fF" 'ido-find-file-other-window)
+  (spacemacs/set-leader-keys "bk" 'kill-this-buffer)
   (spacemacs/set-leader-keys "bB" 'switch-to-buffer-other-window)
   ) 
 ;; Do not write anything past this comment. This is where Emacs will
